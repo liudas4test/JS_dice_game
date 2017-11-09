@@ -28,6 +28,7 @@ console.log('git test');
 console.log('another git test');
 function empty(){
 	//do nothing
+	//do nothing
 }
 //console.log(x);
 
