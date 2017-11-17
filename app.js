@@ -13,31 +13,10 @@ var scores = [0,0];
 var roundScore = 0;
 var activePlayer = 0;
 
-
-//console.log(dice);
-
-//document.querySelector('#current-' + activePlayer).textContent = dice;
-//document.querySelector('#current-'+ activePlayer).innerHTML = '<em>' + dice + '</em>';
-
-
 document.getElementById('score-0').textContent = '0';
 document.getElementById('score-1').textContent = '0';
 document.getElementById('current-0').textContent = '0';
 document.getElementById('current-1').textContent = '0';
-
-console.log('git test');
-console.log('another git test');
-function empty(){
-	//do nothing
-	//do nothing
-	//do nothing
-}
-//console.log(x);
-
-
-//document.querySelector('.dice').style.display = 'none';
-
-
 
 document.querySelector('.btn-roll').addEventListener('click',function(){
 	//1
