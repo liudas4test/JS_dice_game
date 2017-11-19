@@ -11,7 +11,7 @@ GAME RULES:
 
 var scores = [0,0];
 var roundScore = 0;
-var activePlayer = 1;
+var activePlayer = 0;
 document.getElementById('score-0').textContent = 0;
 document.getElementById('score-1').textContent = 0;
 document.getElementById('current-0').textContent = 0;
@@ -31,7 +31,19 @@ document.querySelector('.btn-roll').addEventListener('click', function(){
 	//3. Update the round score if rolled number is not a 1
 	if(dice !== 1){
 		roundScore += dice;
+		document.querySelector('#current-' + activePlayer).textContent = roundScore;
+		console.log('next');
 	} else {
+		roundScore = 0;
+		document.querySelector('#current-' + activePlayer).textContent = roundScore;
+		//activePlayer === 0 ? activeplayer = 1 : activePlayer = 0;
+		if(activePlayer < 1){
+			activePlayer = 1;
+		} else{
+			activePlayer = 0;
+		}
+		console.log(activePlayer);
+		
 
 	}
 
