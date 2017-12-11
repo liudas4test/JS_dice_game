@@ -34,23 +34,46 @@ document.querySelector('.btn-roll').addEventListener('click', function(){
 		document.querySelector('#current-' + activePlayer).textContent = roundScore;
 		//console.log('next');
 	} else {
-		roundScore = 0;
-		document.querySelector('.dice').style.display = 'none';
-		document.querySelector('#current-' + activePlayer).textContent = roundScore;
-		
-		if(activePlayer < 1){
-			activePlayer = 1;
-			document.querySelector('.player-0-panel').classList.remove('active');
-			document.querySelector('.player-1-panel').classList.add('active');
-		} else{
-			activePlayer = 0;
-			document.querySelector('.player-1-panel').classList.remove('active');
-			document.querySelector('.player-0-panel').classList.add('active');
-		}
-		
-		
-		//console.log(activePlayer);
+		nextPlayer();
 	}
 
 
 });
+
+document.querySelector('.btn-hold').addEventListener('click', function(){
+	//Current score to global score
+	scores[activePlayer] += roundScore;
+	
+	//update UI
+	document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer];
+	
+	
+	// check if player win
+	if(scores[activePlayer] >= 10){
+		document.querySelector('#name-' + activePlayer).textContent = 'WINNER!';
+		document.querySelector('.dice').style.display = 'none';
+		document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
+		document.querySelector('.player-' + activePlayer + '-panel').classList.remove('active');
+	}
+	else{
+		//choose next player
+		nextPlayer();
+	}
+	
+});
+
+function nextPlayer(){
+	roundScore = 0;
+	document.querySelector('.dice').style.display = 'none';
+	document.querySelector('#current-' + activePlayer).textContent = roundScore;
+	
+	if(activePlayer < 1){
+		activePlayer = 1;
+		document.querySelector('.player-0-panel').classList.remove('active');
+		document.querySelector('.player-1-panel').classList.add('active');
+	} else{
+		activePlayer = 0;
+		document.querySelector('.player-1-panel').classList.remove('active');
+		document.querySelector('.player-0-panel').classList.add('active');
+	}
+}
