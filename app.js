@@ -42,7 +42,7 @@ document.querySelector('.btn-roll').addEventListener('click', function(){
 		} else{
 			activePlayer = 0;
 		}
-		console.log(activePlayer);
+		//console.log(activePlayer);
 		
 
 	}
