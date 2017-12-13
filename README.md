@@ -1,2 +1,3 @@
 # JS_dice_game
-Simple JavaScript dice game 
+Learning JS. Simple JavaScript dice game
+
