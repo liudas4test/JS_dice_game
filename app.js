@@ -49,7 +49,7 @@ document.querySelector('.btn-hold').addEventListener('click', function(){
 	
 	
 	// check if player win
-	if(scores[activePlayer] >= 15){
+	if(scores[activePlayer] >= 25){
 		document.querySelector('#name-' + activePlayer).textContent = 'WINNER!';
 		document.querySelector('.dice').style.display = 'none';
 		document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
@@ -82,7 +82,7 @@ document.querySelector('.btn-new').addEventListener('click', function(){
 	document.querySelector('.btn-hold').style.display = 'block';
 
 });
-//-------------------------Next player funcion------------------
+//-------------------------Next player funcion------------------  
 function nextPlayer(){
 	roundScore = 0;
 	//document.querySelector('.dice').style.display = 'none';
